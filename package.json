@@ -1,0 +1,22 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Villka/Node.git"
+  },
+  "author": "Villka <nevermorys@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Villka/Node/issues"
+  },
+  "homepage": "https://github.com/Villka/Node#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
