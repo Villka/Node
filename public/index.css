@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    min-height: 100%;
+    max-width: 100%;
+    flex-direction: column;
+}
+
+.nav-wrapper {
+    padding: 0 20rem;
+}
+
+.container {
+    min-height: 100%;
+    flex: 1 1 auto;
+}
