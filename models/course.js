@@ -34,8 +34,6 @@ class Course {
                 }
             })
         })
-
-        console.log('Courses', courses)
     }
 
     static getAll() {
