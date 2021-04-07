@@ -1,4 +1,6 @@
-const {Router} = require('express')
+const {
+    Router
+} = require('express')
 const Card = require('../models/card')
 const Course = require('../models/course')
 const router = Router()
@@ -9,7 +11,7 @@ router.post('/add', async (req, res) => {
     res.redirect('/card')
 })
 
-router.delete('/remove/:id', async (req, res ) => {
+router.delete('/remove/:id', async (req, res) => {
     const card = await Card.remove(req.params.id)
     res.status(200).json(card)
 })

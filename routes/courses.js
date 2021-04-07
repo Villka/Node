@@ -1,4 +1,6 @@
-const {Router} = require('express');
+const {
+    Router
+} = require('express');
 const Course = require('../models/course')
 const router = Router();
 
@@ -36,6 +38,6 @@ router.get('/:id', async (req, res) => {
         title: `Course ${course.title}`,
         course
     })
-} )
+})
 
 module.exports = router;

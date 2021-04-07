@@ -7,7 +7,7 @@ const p = path.join(
     'card.json'
 )
 
-class Card  {
+class Card {
     static async add(course) {
         const card = await Card.fetch()
 
@@ -18,8 +18,7 @@ class Card  {
             // be
             candidate.count++
             card.courses[idx] = candidate
-        }
-        else {
+        } else {
             // not be
             course.count = 1
             card.courses.push(course)
@@ -29,15 +28,14 @@ class Card  {
 
         return new Promise((resolve, reject) => {
             fs.writeFile(p,
-            JSON.stringify(card),
-            err => {
-                if (err) {
-                reject(err)
-                } 
-                else {
-                    resolve()
-                }
-            })
+                JSON.stringify(card),
+                err => {
+                    if (err) {
+                        reject(err)
+                    } else {
+                        resolve()
+                    }
+                })
         })
     }
 
@@ -47,7 +45,7 @@ class Card  {
         const idx = card.courses.findIndex(x => x.id === id)
         const course = card.courses[idx]
 
-        if (course.count === 1) {
+        if (course.count == 1) {
             //del
             card.courses = card.courses.filter(x => x.id !== id)
         } else {
@@ -58,30 +56,28 @@ class Card  {
 
         return new Promise((resolve, reject) => {
             fs.writeFile(p,
-            JSON.stringify(card),
-            err => {
-                if (err) {
-                reject(err)
-                } 
-                else {
-                    resolve(card)
-                }
-            })
+                JSON.stringify(card),
+                err => {
+                    if (err) {
+                        reject(err)
+                    } else {
+                        resolve(card)
+                    }
+                })
         })
     }
 
     static async fetch() {
         return new Promise((resolve, reject) => {
             fs.readFile(p,
-            'utf-8',
-            (err, content) => {
-                if (err) {
-                    reject()
-                }
-                else {
-                    resolve(JSON.parse(content))
-                }
-            })
+                'utf-8',
+                (err, content) => {
+                    if (err) {
+                        reject()
+                    } else {
+                        resolve(JSON.parse(content))
+                    }
+                })
         })
     }
 }

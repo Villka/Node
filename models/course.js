@@ -1,4 +1,6 @@
-const { v4: uuidv4 } = require('uuid');
+const {
+    v4: uuidv4
+} = require('uuid');
 const fs = require('fs');
 const path = require('path');
 
@@ -26,14 +28,14 @@ class Course {
         courses[index] = course
         return new Promise((resolve, reject) => {
             fs.writeFile(path.join(__dirname, '..', 'data', 'courses.json'),
-            JSON.stringify(courses),
-            (err) => {
-                if (err) {
-                    reject (err);
-                } else {
-                    resolve()
-                }
-            })
+                JSON.stringify(courses),
+                (err) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve()
+                    }
+                })
         })
     }
 
@@ -43,14 +45,14 @@ class Course {
 
         return new Promise((resolve, reject) => {
             fs.writeFile(path.join(__dirname, '..', 'data', 'courses.json'),
-            JSON.stringify(courses),
-            (err) => {
-                if (err) {
-                    reject (err);
-                } else {
-                    resolve()
-                }
-            })
+                JSON.stringify(courses),
+                (err) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve()
+                    }
+                })
         })
     }
 
@@ -61,7 +63,7 @@ class Course {
                 'utf-8',
                 (err, content) => {
                     if (err) {
-                        reject (err);
+                        reject(err);
                     } else {
                         resolve(JSON.parse(content))
                     }
